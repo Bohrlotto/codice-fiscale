@@ -12,13 +12,14 @@
   "moduleType": [
     "globals"
   ],
-  "homepage": "https://heavybeard.github.io/codice-fiscale/",
+  "homepage": "https://github.com/Bohrlotto/codice-fiscale",
   "private": false,
   "ignore": [
     "/.*",
     "node_modules"
   ],
   "authors": [
+    "Bohrlotto <francesco.santoro.00@gmail.com>",
     "Heavybeard <info@heavybeard.it> (http://heavybeard.it)",
     "zingus (http://zingus.altervista.org/)"
   ]
