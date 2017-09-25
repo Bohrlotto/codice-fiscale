@@ -1,11 +1,11 @@
 {
   "name": "codice-fiscale",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Javascript object for managing the italian tax code",
   "main": "dist/CodiceFiscale.min.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/heavybeard/codice-fiscale.git"
+    "url": "git+https://github.com/Bohrlotto/codice-fiscale"
   },
   "keywords": [
     "codice fiscale",
@@ -13,27 +13,33 @@
     "italian tax code"
   ],
   "author": "heavybeard",
-  "contributors": [{
-    "name": "zingus",
-    "url": "http://zingus.altervista.org/"
-  }],
+  "contributors": [
+    {
+      "name": "zingus",
+      "url": "http://zingus.altervista.org/"
+    }
+  ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/heavybeard/codice-fiscale/issues"
+    "url": "https://github.com/Bohrlotto/codice-fiscale/issues"
   },
   "homepage": "https://heavybeard.github.io/codice-fiscale/",
   "devDependencies": {
     "nodemon": "^1.8.1",
     "uglify-js": "^2.4.21"
   },
-   "scripts": {
-    "compress-js": "uglifyjs --mangle --preamble=\"/** CodiceFiscale - 1.0.2 (https://github.com/heavybeard/codice-fiscale) */\" source/CodiceFiscale.js source/CodiceFiscale.cadastralCodes.js > dist/CodiceFiscale.min.js",
-    "beautify-js": "uglifyjs --beautify --preamble=\"/** CodiceFiscale - 1.0.2 (https://github.com/heavybeard/codice-fiscale) */\" source/CodiceFiscale.js source/CodiceFiscale.cadastralCodes.js > dist/CodiceFiscale.js",
+  "scripts": {
+    "compress-js": "uglifyjs --mangle --preamble=\"/** CodiceFiscale - 1.0.3 (https://github.com/Bohrlotto/codice-fiscale) */\" source/CodiceFiscale.js source/CodiceFiscale.cadastralCodes.js > dist/CodiceFiscale.min.js",
+    "beautify-js": "uglifyjs --beautify --preamble=\"/** CodiceFiscale - 1.0.3 (https://github.com/Bohrlotto/codice-fiscale) */\" source/CodiceFiscale.js source/CodiceFiscale.cadastralCodes.js > dist/CodiceFiscale.js",
     "watch-compress-js": "nodemon -e js --watch source -x \"npm run compress-js\"",
-    "clean": "rm dist/*.js",
+    "clean": "del dist ",
     "watch": "npm run watch-compress-js",
     "version": "npm run build && git add -u .",
     "build": "npm run clean && npm run compress-js && npm run beautify-js",
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "grunt-wiredep": "^3.0.1",
+    "matchdep": "^2.0.0"
   }
 }

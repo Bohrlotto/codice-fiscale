@@ -264,8 +264,7 @@ CodiceFiscale.prototype.dayCode = function () {
 
     day = (this.generality('isMale')) ? day : day + 40;
     day = day.toString().substr(day.length - 2, 2);
-
-    return day;
+    return day.length < 2 ? '0'+day : day;
 };
 
 /**
@@ -362,7 +361,7 @@ CodiceFiscale.prototype._commune = function () {
         regex = '';
 
     quoted = communeName.replace(stringToReplace, '\\$1');
-    regex = new RegExp(quoted, 'i');
+    regex = new RegExp('^'+quoted+'$', 'i');
     for (code in this.setting('cadastralCodes')) {
         commune = this._communeCadastralCode(code);
         if (commune.match(regex)) {
